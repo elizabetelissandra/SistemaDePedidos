@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+
+	<display-name>MeuProjetoArnia</display-name>
+
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+
+	<listener>
+		<listener-class>br.com.linkcom.neo.core.web.init.ContextLoaderListener</listener-class>
+	</listener>
+
+	<filter>
+		<filter-name>neoFilter</filter-name>
+		<filter-class>br.com.linkcom.neo.core.web.NeoFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>neoFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<filter>
+		<filter-name>authFilter</filter-name>
+		<filter-class>br.com.arnia.projetoarnia.filter.AuthenticationFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>authFilter</filter-name>
+		<url-pattern>/sistema/*</url-pattern>
+	</filter-mapping>
+	
+	<filter-mapping>
+		<filter-name>authFilter</filter-name>
+		<url-pattern>/interno/*</url-pattern>
+	</filter-mapping>
+	
+	<servlet>
+		<servlet-name>ajaxServlet</servlet-name>
+		<servlet-class>br.com.linkcom.neo.view.AjaxServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ajaxServlet</servlet-name>
+		<url-pattern>/ajax/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>sistema</servlet-name>
+		<servlet-class>br.com.linkcom.neo.controller.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>sistema</servlet-name>
+		<url-pattern>/sistema/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>suprimentos</servlet-name>
+		<servlet-class>br.com.linkcom.neo.controller.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>suprimentos</servlet-name>
+		<url-pattern>/suprimentos/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>faturamento</servlet-name>
+		<servlet-class>br.com.linkcom.neo.controller.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>faturamento</servlet-name>
+		<url-pattern>/faturamento/*</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>resourceServlet</servlet-name>
+		<servlet-class>br.com.linkcom.neo.view.ResourceServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>resourceServlet</servlet-name>
+		<url-pattern>/resource/*</url-pattern>
+	</servlet-mapping>
+	<error-page>
+		<exception-type>br.com.linkcom.wexer.util.DatasourceException</exception-type>
+		<location>/jsp/errorDataSourceNotFound.jsp</location>
+	</error-page>
+
+</web-app>

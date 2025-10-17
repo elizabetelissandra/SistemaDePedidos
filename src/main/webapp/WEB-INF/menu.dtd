@@ -1,0 +1,16 @@
+<!ELEMENT menugroup (menu*)>
+
+<!ELEMENT menu (menu*)>
+
+<!ATTLIST menugroup orientation CDATA "hbr">
+
+<!ATTLIST menu icon CDATA "">
+<!ATTLIST menu bootstrap-icon CDATA "">
+<!ATTLIST menu title CDATA "">
+<!ATTLIST menu url CDATA "">
+<!ATTLIST menu target CDATA "">
+<!ATTLIST menu description CDATA "">
+<!ATTLIST menu dark CDATA "">
+<!ATTLIST menu activepart CDATA "">
+<!ATTLIST menu report CDATA "">
+<!ATTLIST menu module CDATA "">

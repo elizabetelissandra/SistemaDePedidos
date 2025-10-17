@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE menugroup PUBLIC "//LinkCom//Neo Menu 1.0//EN" "menu.dtd">
+
+<menugroup>
+	<menu title="Sistema" bootstrap-icon="fa fa-wrench">
+		<menu title="Cliente" url="/sistema/crud/Cliente" bootstrap-icon=""/>
+		<menu title="Relatório de Clientes" url="/sistema/relatorio/cliente" bootstrap-icon=""/>
+	</menu>
+	<menu title="Suprimentos" bootstrap-icon="fa fa-wrench">
+		<menu title="Fornecedor" url="/suprimentos/crud/Fornecedor" bootstrap-icon=""/>
+		<menu title="Unidade de medida" url="/suprimentos/crud/Unidades" bootstrap-icon=""/>
+		<menu title="Produto" url="/suprimentos/crud/Produtos" bootstrap-icon=""/>
+		<menu title="Relatório de Produtos" url="/suprimentos/relatorio/produtos" bootstrap-icon=""/>
+		
+	</menu>
+	<menu title="Faturamento" bootstrap-icon="fa fa-wrench">
+		<menu title="Vendedor" url="/faturamento/crud/Vendedor" bootstrap-icon=""/>
+		<menu title="Relatório de Vendedores" url="/faturamento/relatorio/vendedor" bootstrap-icon=""/>
+		<menu title="Pedidos" url="/faturamento/crud/Pedido" bootstrap-icon=""/>
+		<menu title="Itens" url="/faturamento/crud/PedidoItem" bootstrap-icon=""/>
+		<menu title="Relatório de Produtos Vendidos" url="/faturamento/relatorio/produtosVendidos" bootstrap-icon=""/>	
+	</menu>
+</menugroup>
